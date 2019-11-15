@@ -1,0 +1,72 @@
+
+<div class="row row-runs">
+    <h2 class="heading">Add New Route</h2>
+    <hr />
+    <form (ngSubmit)="onSubmit()" #Form="ngForm">
+        <mat-form-field>
+            <mat-label>Select API</mat-label>
+            <mat-select [(ngModel)]="routeModel.routingapi"
+                        name="routingapi"
+                        matFormFieldControl
+                        required>
+                <mat-option *ngFor="let routingapi of routingapis"
+                            [value]="routingapi.value">
+                    {{ routingapi.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field>
+            <mat-label>Web Processing Service</mat-label>
+            <mat-select [(ngModel)]="wps" name="wps" matFormFieldControl required>
+                <mat-option *ngFor="let wps of wpss" [value]="wps.value">
+                    {{ wps.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field>
+            <mat-label>Select Schema</mat-label>
+            <mat-select [(ngModel)]="routeModel.schema"
+                        name="schema"
+                        matFormFieldControl
+                        required>
+                <mat-option *ngFor="let schema of schemas" [value]="schema.value">
+                    {{ schema.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field>
+            <mat-label>Select Algorithm</mat-label>
+            <mat-select name="name"
+                        [(ngModel)]="routeModel.algorithm" matFormFieldControl required>
+                <mat-option *ngFor="let algorithm of algorithms" [value]="algorithm.value">
+                    {{ algorithm.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-checkbox>
+            Mat Checkbox:
+            <input matInput type="number" [(ngModel)]="routeModel.maxWeight" name="maxHeight" placeholder="kg/lbs" />
+        </mat-checkbox>
+        <br />
+
+        <button mat-raised-button (click)="onSubmit()" type="submit">
+            Submit
+        </button>
+    </form>
+
+</div>
+
+<!--<li *ngFor="let coordinate of routeModel.waypoints.coordinates">
+    {{coordinate}}
+</li>-->
+
+<div>
+<app-map (messageEvent)="getWaypoints($event)"></app-map>
+</div>

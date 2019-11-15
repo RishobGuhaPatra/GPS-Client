@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* @import "../node_modules/leaflet/dist/leaflet.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css"; */
+
+body{
+    font-family: 'Jaldi', sans-serif;
+    background-image: url("./assets/img/bkg.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border-radius: 14px;
+
+  }
+  
+  
+  
+  .app-row{
+    background-color:#fff;
+  }
+
+
+  .logo1{
+    background-image: url("./assets/img/Logo.png");
+    border-radius: 4px;
+    padding: 5px;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    }
